@@ -1,0 +1,14 @@
+version: '2'
+services:
+  kibana:
+    build: .
+    ports:
+      - 127.0.0.1:5601:5601
+    environment:
+      ELASTICSEARCH_URL: https://elasticsearch:9200/
+      ELASTICSEARCH_USERNAME: username
+      ELASTICSEARCH_PASSWORD: password
+      KIBANA_INDEX: kibana_index
+      ELASTICSEARCH_PRESERVEHOST: "true"
+      SERVER_HOST: 0.0.0.0
+      ELASTICSEARCH_DEFAULT_INDEX: optional_index
