@@ -33,6 +33,8 @@ if [ "$1" = 'kibana' ]; then
         sed -i  "s/_all/$ELASTICSEARCH_DEFAULT_INDEX/" /opt/kibana/installedPlugins/timelion/timelion.json
     fi
 
+    echo "sense.defaultServerUrl: $ELASTICSEARCH_URL" >> /opt/kibana/config/kibana.yml
+
     set -- gosu kibana tini -- "$@"
 fi
 
