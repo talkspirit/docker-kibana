@@ -1,6 +1,3 @@
-FROM kibana:4.5
-
-RUN /opt/kibana/bin/kibana plugin -i elastic/timelion
-RUN /opt/kibana/bin/kibana plugin -i elastic/sense
+FROM kibana:5.6.3
 
 COPY docker-entrypoint.sh /
